@@ -33,7 +33,7 @@ function Register() {
 						<option value="Influencer">Influencer</option>
 					</select>
 				</div>
-				<button onClick={routeChange}>Create Account</button>
+				<button><a href="/home">Create Account</a></button>
 			</form>
 		</div>
 	);

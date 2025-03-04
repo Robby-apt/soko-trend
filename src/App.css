@@ -229,6 +229,11 @@ form {
 			background-color: #000;
 			color: #fff;
 		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 	}
 }
 
@@ -254,6 +259,7 @@ select {
 		}
 
 		h1 {
+			color: #fff;
 			margin: auto auto auto 0.3125rem;
 		}
 	}
