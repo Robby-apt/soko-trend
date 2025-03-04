@@ -7,7 +7,7 @@ function Register() {
 		let path = '/home';
 		navigate(path);
 	};
-    
+
 	return (
 		<div className="register formArea">
 			<form action="">
@@ -33,7 +33,9 @@ function Register() {
 						<option value="Influencer">Influencer</option>
 					</select>
 				</div>
-				<button><a href="/home">Create Account</a></button>
+				<button>
+					<a href="/dashboard">Create Account</a>
+				</button>
 			</form>
 		</div>
 	);

@@ -20,7 +20,9 @@ function LoginForm() {
 						<label htmlFor="loginPassword">Password:</label>
 						<input type="text" id="loginPassword" />
 					</div>
-					<button><a href="/home">Login</a></button>
+					<button>
+						<a href="/dashboard">Login</a>
+					</button>
 				</form>
 			</div>
 		</div>
