@@ -1,0 +1,53 @@
+/* Fade-in effect for the entire section */
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Title animation (typewriter effect) */
+.title-animation {
+  animation: typewriter 2s steps(40) 1s forwards, blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor effect for typewriter */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Fade-in effect for description */
+.fade-in-description {
+  animation: fadeInDescription 2s ease-in 1s forwards;
+}
+
+@keyframes fadeInDescription {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover effect on the Unity WebGL container */
+.unity-container {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.unity-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}

@@ -1,38 +1,150 @@
+/* Smooth transition when switching between sections */
 .App {
-  text-align: center;
+	font-family: 'Arial', sans-serif;
+	position: relative;
+	overflow: hidden;
+	background-color: #121212; /* Dark background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Hover effects for navbar links */
+nav a {
+	transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav a:hover {
+	color: #ff6347; /* Hover color (Tomato) */
+	transform: scale(1.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Smooth fade-in effect for each section */
+[data-aos='fade-in'] {
+	opacity: 0;
+	animation: fadeInAnimation 1.5s forwards;
 }
 
-.App-link {
-  color: #61dafb;
+[data-aos='fade-up'] {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeUpAnimation 1.5s forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fadeInAnimation {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeUpAnimation {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Unity WebGL Section */
+#unity-webgl {
+	animation: slideUp 1s ease-out;
+	margin-top: 50px;
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* Simple Fade-In on Body and Footer */
+body {
+	animation: bodyFadeIn 1.5s ease-out;
+}
+
+.logoImg{
+    width: 5rem;
+}
+
+.heroSection {
+	/* background-image: url(../public/sumup-Aqc7znjxROM-unsplash.jpg); */
+	/* backdrop-filter: ; */
+	background:
+        /* top, transparent black, faked with gradient */ linear-gradient(
+			rgba(0, 0, 0, 0.7),
+			rgba(0, 0, 0, 0.7)
+		),
+		/* bottom, image */ url(../public/sumup-Aqc7znjxROM-unsplash.jpg) center
+			no-repeat;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@keyframes bodyFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Hover effect for the Unity WebGL container */
+.unity-container {
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.unity-container:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+.btn-hover-expand {
+	transition: transform 0.3s ease, padding 0.3s ease; /* Smooth transition for transform and padding */
+}
+
+.btn-hover-expand:hover {
+	transform: scale(1.2); /* Makes the button 1.2 times bigger */
+	padding: 10px 20px; /* Optionally adjust padding for extra expansion */
+}
+/* Add to your CSS file */
+.btn-hover-expand {
+	position: relative; /* Required for underline animation */
+	display: inline-block; /* Ensures that the link behaves like a block-level element */
+	padding: 10px 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid transparent; /* Border for the hover effect */
+	border-radius: 5px;
+	background-color: #007bff; /* Default background color */
+	transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.btn-hover-expand:hover {
+	transform: scale(1.1); /* Slightly scale up */
+	background-color: #0056b3; /* Change the background color */
+	color: #fff; /* Ensure text stays white */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Animated underline effect */
+.btn-hover-expand::before {
+	content: ''; /* Creates the underline */
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: 0;
+	left: 50%;
+	background-color: #fff; /* Underline color */
+	transition: width 0.3s ease, left 0.3s ease; /* Animate width and position */
+}
+
+.btn-hover-expand:hover::before {
+	width: 100%; /* Expand the underline to full width */
+	left: 0; /* Move the underline to the left */
 }
