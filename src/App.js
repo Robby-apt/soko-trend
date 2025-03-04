@@ -5,6 +5,7 @@ import DemoNavbar from './Pages/DemoNavbar';
 import HomePage from './Pages/HomePage';
 import Body from './Pages/Body';
 import UnityWebGLSection from './Pages/UnityWebGLSection';
+import UnityAlt from './Pages/UnityAlt';
 import { useEffect } from 'react';
 
 // Importing AOS (Animate On Scroll) library for scroll-based animations (optional but cool)
@@ -29,7 +30,8 @@ const App = () => {
       <HomePage/>
       {/*end of homepage------------------------------------------------------------------------------------*/}
       <div id="ai">
-      <UnityWebGLSection />
+      {/* <UnityWebGLSection /> */}
+      <UnityAlt/>
       </div>
       {/* Body section with fade-in effect */}
       <div data-aos="fade-up">

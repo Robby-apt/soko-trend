@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  return (
+	let navigate = useNavigate();
+	const routeChange = () => {
+		let path = '/home';
+		navigate(path);
+	};
+    
+	return (
 		<div className="register formArea">
 			<form action="">
 				<div className="emailInput input">
@@ -16,10 +23,20 @@ function Register() {
 					<label htmlFor="confirmField">Confirm Password:</label>
 					<input type="text" id="confirmField" />
 				</div>
-                <button>Create Account</button>
+				<div className="registrationType input">
+					<label htmlFor="regType">Confirm Password:</label>
+					<select type="text" id="regType">
+						<option value="" className="blankOption">
+							-- select option --
+						</option>
+						<option value="Brand">Brand</option>
+						<option value="Influencer">Influencer</option>
+					</select>
+				</div>
+				<button onClick={routeChange}>Create Account</button>
 			</form>
 		</div>
-  );
+	);
 }
 
-export default Register
+export default Register;

@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+	let navigate = useNavigate();
+	const routeChange = () => {
+		let path = '/home';
+		navigate(path);
+	};
+
 	return (
 		<div className="login formArea">
 			<div className="register formArea">
@@ -13,7 +20,7 @@ function LoginForm() {
 						<label htmlFor="loginPassword">Password:</label>
 						<input type="text" id="loginPassword" />
 					</div>
-					<button>Login</button>
+					<button onClick={routeChange}>Login</button>
 				</form>
 			</div>
 		</div>
